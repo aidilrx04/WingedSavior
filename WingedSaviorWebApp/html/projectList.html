@@ -1,243 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project List - Winged Saviors</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <script src="phosphor.js" type="module"></script>
-    <style>
-      /* Project List Section */
-      .project-list-section {
-        border-radius: 10px;
-        padding: 20px;
-        margin: 0 auto;
-        margin-top: 70px;
-        max-height: 70vh;
-        overflow-y: auto;
-      }
 
-      .project-list-section h2 {
-        color: #2f3645;
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: bold;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Project List - Winged Saviors</title>
+  <link
+    href="styles.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script
+    src="phosphor.js"
+    type="module"
+  ></script>
+  <style>
+    /* Project List Section */
+    .project-list-section {
+      border-radius: 10px;
+      padding: 20px;
+      margin: 0 auto;
+      margin-top: 70px;
+      overflow-y: auto;
+    }
 
-      .project-card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
+    .project-list-section h2 {
+      color: #2f3645;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-      .project-card {
-        padding: 20px;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        width: calc(45% - 20px);
-        min-width: 250px;
-        flex-grow: 1;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: white;
-      }
+    .project-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
-      .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
+    .project-card {
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: calc(45% - 20px);
+      min-width: 250px;
+      flex-grow: 1;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
 
-      .project-card-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
-      .project-card-header h3 {
-        color: #2f3645;
-        margin: 0;
-      }
+    .project-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      .project-card-header i {
-        font-size: 1.2em;
-        transition: transform 0.3s ease;
-      }
+    .project-card-header h3 {
+      color: #2f3645;
+      margin: 0;
+    }
 
-      .project-card-content {
-        display: none;
-        margin-top: 10px;
-        color: #555;
-      }
+    .project-card-header i {
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
 
-      .project-card.show .project-card-content {
-        display: block;
-      }
+    .project-card-content {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+    }
 
-      .project-card.show .project-card-header i {
-        transform: rotate(180deg);
-      }
+    .project-card.show .project-card-content {
+      display: block;
+    }
 
-      .project-card-content p {
-        margin: 5px 0;
-      }
+    .project-card.show .project-card-header i {
+      transform: rotate(180deg);
+    }
 
-      .project-card-buttons {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 15px;
-      }
+    .project-card-content p {
+      margin: 5px 0;
+    }
 
-      .project-card-buttons button {
-        padding: 10px 20px;
-        background-color: #2f3645;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 45%;
-      }
+    .project-card-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
 
-      .project-card-buttons button:hover {
-        background-color: #495167;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="fixed-header">
-      <div class="header-content">
-        <a href="home.html" class="back-button">
-          <i class="ph ph-arrow-left"></i>
+    .project-card-buttons button {
+      padding: 10px 20px;
+      background-color: #2f3645;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 45%;
+    }
+
+    .project-card-buttons button:hover {
+      background-color: #495167;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="fixed-header">
+    <div class="header-content">
+      <a
+        href="home.html"
+        class="back-button"
+      >
+        <i class="ph ph-arrow-left"></i>
+      </a>
+      <img
+        src="asset/logo-wingedSaviors-whitky.svg"
+        alt="Winged Saviors Logo"
+        class="logo-img"
+      />
+      <div class="notification-container">
+        <a
+          href="#"
+          class="notification-icon"
+          onclick="togglePopup(event)"
+        >
+          <i class="ph ph-bell"></i>
         </a>
-        <img
-          src="asset/logo-wingedSaviors-whitky.svg"
-          alt="Winged Saviors Logo"
-          class="logo-img"
-        />
-        <div class="notification-container">
-          <a href="#" class="notification-icon" onclick="togglePopup(event)">
-            <i class="ph ph-bell"></i>
-          </a>
-          <div class="notification-popup" id="notificationPopup">
-            <!-- Notification content goes here -->
-            <p>This is a notification popup!</p>
-          </div>
+        <div
+          class="notification-popup"
+          id="notificationPopup"
+        >
+          <!-- Notification content goes here -->
+          <p>This is a notification popup!</p>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="background-image">
-      <section class="container project-list-section">
-        <h2>Project List</h2>
-        <div class="project-card-container">
-          <div class="empty-list" style="display: none;">
-            <span>No project yet.</span>
-            <button>Create one</button>
-            <style>
-              .empty-list {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                box-sizing: border-box;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-                padding: 20px;
-                background-color: #eaeaac;
-                font-size: 18px;
-                border-radius: 6px;
-                min-height: 200px;
-              }
+  <main class="background-image">
+    <section class="project-list-section">
+      <h2>Project List</h2>
+      <div class="project-card-container">
+        <div
+          class="empty-list"
+          style="display: none;"
+        >
+          <span>No project yet.</span>
+          <button>Create one</button>
+          <style>
+            .empty-list {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              box-sizing: border-box;
+              width: 100%;
+              justify-content: center;
+              align-items: center;
+              padding: 20px;
+              background-color: #eaeaac;
+              font-size: 18px;
+              border-radius: 6px;
+              min-height: 200px;
+            }
 
-              .empty-list button {
-                padding: 8px 12px;
-                border-radius: 6px;
-                background-color: #2f3645;
-                color: #fff;
-              }
-            </style>
-          </div>
+            .empty-list button {
+              padding: 8px 12px;
+              border-radius: 6px;
+              background-color: #2f3645;
+              color: #fff;
+            }
+          </style>
         </div>
-      </section>
-      <br /><br />
-    </main>
+      </div>
+    </section>
+    <br /><br />
+  </main>
 
-    <footer>
-      <nav class="bottom-nav">
-        <ul>
-          <li>
-            <a href="home.html">
-              <i class="ph ph-house"></i><br />
-              <span class="nav-name">Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="liveFeed.html">
-              <i class="ph ph-video-camera"></i><br />
-              <span class="nav-name">Live Feed</span>
-            </a>
-          </li>
-          <li>
-            <a href="profile.html">
-              <i class="ph ph-user"></i><br />
-              <span class="nav-name">Profile</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+  <footer>
+    <nav class="bottom-nav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="ph ph-house"></i><br />
+            <span class="nav-name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="liveFeed.html">
+            <i class="ph ph-video-camera"></i><br />
+            <span class="nav-name">Live Feed</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html">
+            <i class="ph ph-user"></i><br />
+            <span class="nav-name">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 
-    <script>
-      function toggleFeature(element) {
-        element.classList.toggle("show");
-      }
+  <script>
+    function toggleFeature( element )
+    {
+      element.classList.toggle( "show" );
+    }
 
-      function viewProject(projectId) {
-        // Redirect to project details page
-        window.location.href = `viewProject.html?project=${projectId}`;
-      }
+    function viewProject( projectId )
+    {
+      // Redirect to project details page
+      window.location.href = `viewProject.html?project=${projectId}`;
+    }
 
-      function togglePopup(event) {
-        event.preventDefault();
-        var popup = document.getElementById("notificationPopup");
-        popup.classList.toggle("show");
-      }
-    </script>
-    <script type="module">
-      import { api, getUser } from "./conn.js";
-      const types = {
-        0: "Person",
-        15: "Cat",
-        16: "Dog",
-      };
-      document.addEventListener("DOMContentLoaded", async function () {
-        try {
-          const container = document.querySelector(".project-card-container");
-          const emptyList = container.querySelector('.empty-list')
+    function togglePopup( event )
+    {
+      event.preventDefault();
+      var popup = document.getElementById( "notificationPopup" );
+      popup.classList.toggle( "show" );
+    }
+  </script>
+  <script type="module">
+    import { api, getUser } from "./conn.js";
+    const types = {
+      0: "Person",
+      15: "Cat",
+      16: "Dog",
+    };
+    document.addEventListener( "DOMContentLoaded", async function ()
+    {
+      try
+      {
+        const container = document.querySelector( ".project-card-container" );
+        const emptyList = container.querySelector( '.empty-list' );
 
-          const user = getUser();
+        const user = getUser();
 
-          // get project list
-          const res = await fetch(api("/project_list?user=" + user.id));
-          let data = await res.json();
-
-
-          if (data.length === 0) {
-            emptyList.style.display = 'flex'
-            return;
-          }
+        // get project list
+        const res = await fetch( api( "/project_list?user=" + user.id ) );
+        let data = await res.json();
 
 
-          for (const project of data) {
-            const projectCard = document.createElement("div");
-            projectCard.classList.add("project-card");
-            projectCard.onclick = () => toggleFeature(projectCard);
-            const detections = project.detect
-              .split(",")
-              .map((i) => types[i])
-              .join(", ");
-            projectCard.innerHTML = `
+        if ( data.length === 0 )
+        {
+          emptyList.style.display = 'flex';
+          return;
+        }
+
+
+        for ( const project of data )
+        {
+          const projectCard = document.createElement( "div" );
+          projectCard.classList.add( "project-card" );
+          projectCard.onclick = () => toggleFeature( projectCard );
+          const detections = project.detect
+            .split( "," )
+            .map( ( i ) => types[ i ] )
+            .join( ", " );
+          projectCard.innerHTML = `
                             <div class="project-card-header">
                                 <h3><i class="ph ph-folder"></i> ${project.name}</h3>
                                 <i class="ph ph-caret-down"></i>
@@ -252,17 +283,19 @@
                                 </div>
                             </div>
                         `;
-            container.appendChild(projectCard);
-          }
-
-        } catch (e) {
-          console.error(e);
+          container.appendChild( projectCard );
         }
-      });
-    </script>
-    <script type="module">
-      import { setupNoti } from "./notification.js";
-      setupNoti();
-    </script>
-  </body>
+
+      } catch ( e )
+      {
+        console.error( e );
+      }
+    } );
+  </script>
+  <script type="module">
+    import { setupNoti } from "./notification.js";
+    setupNoti();
+  </script>
+</body>
+
 </html>
