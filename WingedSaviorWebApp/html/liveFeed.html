@@ -1,125 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Feed - WingedSaviors</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <script src="phosphor.js" type="module"></script>
-  </head>
-  <body>
-    <header class="fixed-header">
-      <div class="header-content">
-        <a href="home.html" class="back-button">
-          <i class="ph ph-arrow-left"></i
-        ></a>
-        <img
-          src="asset/logo-wingedSaviors-whitky.svg"
-          alt="Winged Saviors Logo"
-          class="logo-img"
-        />
-        <div class="notification-container">
-          <a href="#" class="notification-icon" onclick="togglePopup(event)">
-            <i class="ph ph-bell"></i>
-          </a>
-          <div class="notification-popup" id="notificationPopup">
-            <!-- Notification content goes here -->
-            <p>This is a notification popup!</p>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Video Feed - WingedSaviors</title>
+  <link
+    href="styles.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script
+    src="phosphor.js"
+    type="module"
+  ></script>
+</head>
+
+<body>
+  <header class="fixed-header">
+    <div class="header-content">
+      <a
+        href="home.html"
+        class="back-button"
+      >
+        <i class="ph ph-arrow-left"></i></a>
+      <img
+        src="asset/logo-wingedSaviors-whitky.svg"
+        alt="Winged Saviors Logo"
+        class="logo-img"
+      />
+      <div class="notification-container">
+        <a
+          href="#"
+          class="notification-icon"
+          onclick="togglePopup(event)"
+        >
+          <i class="ph ph-bell"></i>
+        </a>
+        <div
+          class="notification-popup"
+          id="notificationPopup"
+        >
+          <!-- Notification content goes here -->
+          <p>This is a notification popup!</p>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <br />
-      <section class="features">
-        <div class="container" style="margin-top: 20px">
-          <br /><br />
-          <h2>Live Feed</h2>
-          <div class="feature">
-            <img id="video-src" alt="" />
-            <div id="errmodal" style="display: none">
-              <h3><i class="ph-fill ph-warning"></i> Connection Error</h3>
-              <p>Error loading live feed</p>
-              <a href="video.html">Try again</a>
-            </div>
-            <style>
-              #errmodal {
-                width: 300px;
-                max-width: 100%;
-                margin: 0 auto;
-                background-color: #fff;
-                padding: 10px;
-                border-radius: 16px;
-              }
-              #errmodal h3 {
-                color: #b91c1c;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-              }
-              #errmodal a {
-                display: block;
-                margin-top: 20px;
-                width: 100%;
-                box-sizing: border-box;
-                text-align: center;
-                text-decoration: none;
-                padding: 8px 12px;
-                background-color: #059669;
-                color: #fff;
-                border-radius: 6px;
-              }
-
-              #video-src {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-              }
-            </style>
+  <main>
+    <br />
+    <section class="features">
+      <div
+        class="container"
+        style="margin-top: 20px"
+      >
+        <br /><br />
+        <h2>Live Feed</h2>
+        <div
+          class="feature"
+          style="flex-direction: column;;"
+        >
+          <img
+            id="video-src"
+            alt=""
+          />
+          <div
+            id="errmodal"
+            style="display: none"
+          >
+            <h3><i class="ph-fill ph-warning"></i> Connection Error</h3>
+            <p>Error loading live feed</p>
+            <a href="video.html">Try again</a>
           </div>
+          <style>
+            #errmodal {
+              width: 300px;
+              max-width: 100%;
+              margin: 0 auto;
+              background-color: #fff;
+              padding: 10px;
+              border-radius: 16px;
+            }
+
+            #errmodal h3 {
+              color: #b91c1c;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            }
+
+            #errmodal a {
+              display: block;
+              margin-top: 20px;
+              width: 100%;
+              box-sizing: border-box;
+              text-align: center;
+              text-decoration: none;
+              padding: 8px 12px;
+              background-color: #059669;
+              color: #fff;
+              border-radius: 6px;
+            }
+
+            #video-src {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          </style>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-      <nav class="bottom-nav">
-        <ul>
-          <li>
-            <a href="home.html">
-              <i class="ph ph-house"></i><br />
-              <span class="nav-name">Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="liveFeed.html">
-              <i class="ph ph-video-camera"></i><br />
-              <span class="nav-name">Live Feed</span>
-            </a>
-          </li>
-          <li>
-            <a href="profile.html">
-              <i class="ph ph-user"></i><br />
-              <span class="nav-name">Profile</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+  <footer>
+    <nav class="bottom-nav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="ph ph-house"></i><br />
+            <span class="nav-name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="liveFeed.html">
+            <i class="ph ph-video-camera"></i><br />
+            <span class="nav-name">Live Feed</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html">
+            <i class="ph ph-user"></i><br />
+            <span class="nav-name">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 
-    <script type="module" src="video.js"></script>
-    <script type="module">
-      import { setupNoti } from "./notification.js";
-      setupNoti();
+  <script
+    type="module"
+    src="video.js"
+  ></script>
+  <script type="module">
+    import { setupNoti } from "./notification.js";
+    setupNoti();
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const links = document.querySelectorAll(".bottom-nav ul li a");
-        links.forEach((link) => {
-          if (link.href === window.location.href) {
-            link.classList.add("active");
-          }
-        });
-      });
-    </script>
-  </body>
+    document.addEventListener( "DOMContentLoaded", function ()
+    {
+      const links = document.querySelectorAll( ".bottom-nav ul li a" );
+      links.forEach( ( link ) =>
+      {
+        if ( link.href === window.location.href )
+        {
+          link.classList.add( "active" );
+        }
+      } );
+    } );
+  </script>
+</body>
+
 </html>
