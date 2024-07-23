@@ -321,6 +321,7 @@
             // Update mode display
             document.getElementById( 'droneMode' ).innerText = mode;
             startTimer();
+            localStorage.setItem( 'project', projectId );
           } else
           {
             console.error( 'Failed to start drone:', data.message );
