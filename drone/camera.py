@@ -72,7 +72,7 @@ def send_notification(message):
 def get_project_parameters(project_id):
     db_config = {
         'user': 'root',
-        'password': '',
+        'password': 'root',
         'host': 'localhost',
         'database': 'drone',
         'raise_on_warnings': True
@@ -191,6 +191,7 @@ def start_drone(tello, project_id, mode):
         actions = [
             'connect',
             'takeoff',
+            ('up', 50),
             *forward_distances,
             ('ccw', 90),
             *forward_distances,
@@ -216,6 +217,7 @@ def start_drone(tello, project_id, mode):
         actions = [
             'connect',
             'takeoff',
+            ('up', 50),
             *forward_distances,
             ('cw', 180),
             *forward_distances,

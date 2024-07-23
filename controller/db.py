@@ -6,7 +6,7 @@ def db():
             host="localhost",
             database="drone",
             user="root",
-            password=""
+            password="root"
         )
         
         cursor = conn.cursor(dictionary=True)
