@@ -270,6 +270,8 @@
   </script>
   <script type="module">
     import { api, detectionTypes } from "./conn.js";
+    import btnOff from './img/btnOff.png';
+    import btnOn from './img/btnOn.png';
 
     let isStarted = false;
     let timerInterval;
@@ -290,14 +292,14 @@
         if ( isStarted )
         {
           stopDrone();
-          startStopImage.src = "img/btnOff.png";
+          startStopImage.src = btnOff;
           droneStatus.innerHTML = "<strong>Drone Offline</strong>";
           modeSelectionContainer.style.display = "block"; // Show the radio buttons when stopping
           isStarted = false;
         } else
         {
           startDrone();
-          startStopImage.src = "img/btnOn.png";
+          startStopImage.src = btnOn;
           droneStatus.innerHTML = "<strong>Drone Online</strong>";
           modeSelectionContainer.style.display = "none"; // Hide the radio buttons when starting
           isStarted = true;
