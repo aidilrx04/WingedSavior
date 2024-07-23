@@ -103,8 +103,17 @@
           required
         />
         <div class="form-check">
-          <div class="forgot-password">
+          <div style="display: flex; align-items: center;">
             <!-- <a href="#">Forgot password?</a> -->
+            <input
+              type="checkbox"
+              id="remember"
+              name="remember"
+            />
+            <label
+              for="remember"
+              style="margin-bottom: 0"
+            >Remember me</label>
           </div>
           <div class="password-toggle">
             <img
@@ -113,17 +122,6 @@
               id="togglePassword"
             />
           </div>
-        </div>
-        <div class="form-check">
-          <input
-            type="checkbox"
-            id="remember"
-            name="remember"
-          />
-          <label
-            for="remember"
-            style="margin-bottom: 0"
-          >Remember me</label>
         </div>
         <button
           type="submit"
@@ -144,6 +142,18 @@
   import { api } from "./conn.js";
   const togglePassword = document.getElementById( "togglePassword" );
   const password = document.getElementById( "password" );
+  const remember = document.querySelector( '#remember' );
+  const rememberUser = localStorage.getItem( 'remember_me' );
+
+  if ( rememberUser && JSON.parse( rememberUser ) )
+  {
+    remember.checked = true;
+  }
+
+  remember.addEventListener( 'change', () =>
+  {
+    localStorage.setItem( 'remember_me', JSON.stringify( remember.checked ) );
+  } );
 
   togglePassword.addEventListener( "click", function ()
   {

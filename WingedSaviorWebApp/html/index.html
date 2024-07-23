@@ -1,72 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Winged Saviors - Splash Screen</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <style>
-      /* Apply background color to the entire body */
-      body {
-        background-color: #2f3645;
-        margin: 0;
-        font-family: Arial, sans-serif;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Winged Saviors - Splash Screen</title>
+  <link
+    href="styles.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <style>
+    /* Apply background color to the entire body */
+    body {
+      background-color: #2f3645;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Splash Screen Styles */
+    .splash-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: rgb(3, 3, 3);
+      text-align: center;
+    }
+
+    .splash-screen img.logo {
+      height: auto;
+      width: 300px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .splash-screen img.loading {
+      height: auto;
+      width: 100px;
+      /* Adjust as needed */
+      margin-top: 20px;
+      /* Space between logo and loading image */
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeInOut {
+
+      0%,
+      100% {
+        opacity: 0;
       }
 
-      /* Splash Screen Styles */
-      .splash-screen {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: rgb(3, 3, 3);
-        text-align: center;
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
       }
 
-      .splash-screen img.logo {
-        height: auto;
-        width: 300px;
-        animation: fadeIn 2s ease-in-out;
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="splash-screen">
+    <img
+      src="asset/logo-wingedSaviors-whitky.svg"
+      alt="Logo"
+      class="logo"
+    />
+    <img
+      src="img/loading.gif"
+      alt="Loading"
+      class="loading"
+    />
+  </div>
+  <script>
+    // Redirect to login.html after 8 seconds
+    setTimeout( function ()
+    {
+      const remember = localStorage.getItem( 'remember_me' );
+      const user = localStorage.getItem( 'user' );
+
+      if ( remember && user && JSON.parse( remember ) && JSON.parse( user ) )
+      {
+        window.location.href = 'home.html';
+        return;
       }
 
-      .splash-screen img.loading {
-        height: auto;
-        width: 100px; /* Adjust as needed */
-        margin-top: 20px; /* Space between logo and loading image */
-        animation: fadeIn 2s ease-in-out forwards;
-      }
+      window.location.href = "login.html";
+    }, 8000 );
+  </script>
+</body>
 
-      @keyframes fadeInOut {
-        0%,
-        100% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="splash-screen">
-      <img src="asset/logo-wingedSaviors-whitky.svg" alt="Logo" class="logo" />
-      <img src="img/loading.gif" alt="Loading" class="loading" />
-    </div>
-    <script>
-      // Redirect to login.html after 8 seconds
-      setTimeout(function () {
-        window.location.href = "login.html";
-      }, 8000);
-    </script>
-  </body>
 </html>
