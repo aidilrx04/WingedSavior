@@ -254,6 +254,7 @@ def fly_thread(tello: Tello):
     global actions
     global loopActions
     last_no_command = None
+    continue_loop = False
 
     while True:
         try:
@@ -263,7 +264,8 @@ def fly_thread(tello: Tello):
 
                 if time.time() - last_no_command > 5:
                     last_no_command = None
-                    actions = loopActions.copy()  # Reset actions to loopActions
+                    if continue_loop:
+                        actions = loopActions.copy()  # Reset actions to loopActions
 
                 time.sleep(0.1)
                 continue
@@ -273,12 +275,14 @@ def fly_thread(tello: Tello):
 
             if action == 'connect':
                 tello.connect()
+                continue_loop = True
 
             if action == 'takeoff':
                 tello.takeoff()
 
             if action == 'land':
                 tello.land()
+                continue_loop = False
 
             if action == 'streamon':
                 tello.streamon()
