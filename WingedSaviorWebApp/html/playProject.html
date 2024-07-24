@@ -482,7 +482,7 @@
 
         document.querySelector( "#projectName" ).textContent = data.name;
         document.querySelector( "#projectCoordinate" ).textContent =
-          data.coordinate;
+          `${data.coordinate}cm`;
         document.querySelector( "#droneDetection" ).textContent =
           data.detect.split( "," ).map( ( d ) => detectionTypes[ d ] || "Unknown" ).join( ", " );
       } catch ( err )
