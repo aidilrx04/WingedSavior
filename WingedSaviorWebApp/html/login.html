@@ -199,6 +199,7 @@
       const data = ( await res.json() ).user;
 
       localStorage.setItem( "user", JSON.stringify( data ) );
+      localStorage.removeItem( 'project' );
       if ( username === 'admin' )
       {
         window.location.href = 'register-approval.html';
