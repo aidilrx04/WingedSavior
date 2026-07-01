@@ -27,6 +27,8 @@ export function api(path) {
   return `http://${BACKEND_URL}:${WEB_PORT}${path}`;
 }
 
+console.log(BACKEND_URL, api("/test"));
+
 export async function checkProjectExist(projectId) {
   try {
     // server should respond 200 if exists 404 if not found

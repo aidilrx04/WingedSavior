@@ -72,7 +72,7 @@ def send_notification(message):
 def get_project_parameters(project_id):
     db_config = {
         'user': 'root',
-        'password': 'root',
+        'password': '',
         'host': 'localhost',
         'database': 'drone',
         'raise_on_warnings': True

@@ -390,7 +390,7 @@ def start_drone_route():
     # drone_thread = threading.Thread(target=start_drone, args=(tello,project_id,), daemon=True)
     # drone_thread.start()
 
-    # start_drone(tello,project_id, mode)
+    start_drone(tello,project_id, mode)
     return jsonify({"message": "Drone started successfully"}), 200
 
 @routes_bp.route('/check_running')
